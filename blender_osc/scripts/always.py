@@ -66,16 +66,24 @@ def set_body_location():
         gl.spheres[18].worldPosition = [pos[0], pos[1], pos[2]]
         gl.spheres[18].worldScale  = [1.5*gl.scale, 1.5*gl.scale, 1.5*gl.scale]
 
+def set_head_location():
+    """ Le point '19' est au centre de [14, 15] soit au centre des yeux.
+    Il ne vient pas de COCO !
+    """
+    if gl.points[14] and gl.points[15]:
+        pos = (gl.spheres[14].worldPosition + gl.spheres[15].worldPosition)/2
+        gl.spheres[19].worldPosition = [pos[0], pos[1], pos[2]]
+        gl.spheres[19].worldScale  = [1.5*gl.scale, 1.5*gl.scale, 1.5*gl.scale]
+
 
 def set_cubes_position_orientation_scale():
     """Matérialisation des os par des cubes allongés."""
 
     for bone, [p1, p2] in PAIRS.items():
         bone_cube_obj = gl.all_obj[bone]
-        if gl.points[p1] != None and gl.points[p2] != None:
-            apply_objet_position_orientation(gl.spheres[p1],
-                                             gl.spheres[p2],
-                                             bone_cube_obj)
+        apply_objet_position_orientation(gl.spheres[p1],
+                                         gl.spheres[p2],
+                                         bone_cube_obj)
 
 
 def keyboard():
@@ -158,7 +166,7 @@ def main():
             if gl.frame_number < 20:
                 every = 1
             else:
-                every = 5
+                every = 20
             # les datas sans le body
             data = gl.data[gl.nums][:-1]
             if gl.frame_number % every == 0:
@@ -179,6 +187,7 @@ def main():
             set_sphere_position_scale()
             set_cubes_position_orientation_scale()
             set_body_location()
+            set_head_location()
 
             gl.new = 0
             gl.metarig.update()

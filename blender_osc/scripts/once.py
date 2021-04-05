@@ -52,8 +52,9 @@ def main():
 
     gl.spheres = []
     # 18 est le  body au centre de 11 et 12
+    # 19 est le centre des yeux pour la tête
     for i in ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
-                "10", "11", "12", "13", "14", "15", "16", "17", "18"]:
+                "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"]:
         gl.spheres.append(gl.all_obj[i])
 
     # AA sur Text
@@ -83,7 +84,7 @@ def main():
         print("Nombre de frame 14 =", len(gl.data_14))
         gl.data_big = read_json("./scripts/cap_2021_04_03_14_44_fps_14.json")
         print("Nombre de frame big =", len(gl.data_big))
-        gl.data = gl.data_14
+        gl.data = gl.data_4
     else:
         osc_server_init()
 

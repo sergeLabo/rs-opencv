@@ -37,14 +37,16 @@ Lancer le jeu en terminal dans le dossier du blend:
 blenderplayer blender_osc.blend
 ```
 
-### Détection d'un squelette dans une image avec OpenCV
-
-* [Pose Estimation ou Détection d'un squelette dans une image](https://ressources.labomedia.org/detection_d_un_squelette_dans_une_image)
-
 
 ### Le capteur D455
 
 * [Intel Realsense](https://ressources.labomedia.org/intel_realsense)
+
+### Détection d'un squelette dans une image avec OpenCV
+
+* [Pose Estimation ou Détection d'un squelette dans une image](https://ressources.labomedia.org/detection_d_un_squelette_dans_une_image)
+
+Les fichiers .caffemodel (2 x 200 Mo) ne sont pas dans ce dépot.
 
 
 ### TODO

@@ -102,7 +102,8 @@ JOINTS = {  "00": "head",
             "15": "oeuil.l",
             "16": "oreille.r",
             "17": "oreille.l",
-            "18": "centre.bassin"}
+            "18": "centre.bassin",
+            "19": "head"}
 
 # Définition des points origine, direction des cubes de matérialisation des os
 PAIRS = {   "upper_arm.L": [5, 6],
@@ -121,7 +122,8 @@ PAIRS = {   "upper_arm.L": [5, 6],
             "cou": [1, 0],
             "yeux": [15, 16],
             "oreille.R": [15, 14],
-            "oreille.L": [16, 17]}
+            "oreille.L": [16, 17],
+            "head": [0, 19]}
 
 
 # Liste des os du squelette
