@@ -48,6 +48,7 @@ blenderplayer blender_osc.blend
 
 Les fichiers .caffemodel (2 x 200 Mo) ne sont pas dans ce dépot.
 
+Ils sont téléchargeables ici: [www.kaggle.com openpose-model](https://www.kaggle.com/changethetuneman/openpose-model)
 
 ### TODO
 
