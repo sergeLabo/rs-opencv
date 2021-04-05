@@ -83,12 +83,12 @@ def main():
         print("Nombre de frame 14 =", len(gl.data_14))
         gl.data_big = read_json("./scripts/cap_2021_04_03_14_44_fps_14.json")
         print("Nombre de frame big =", len(gl.data_big))
-        gl.data = gl.data_4
+        gl.data = gl.data_14
     else:
         osc_server_init()
 
     # Le filtre Savonarol Brigowski de scipy
-    gl.filtre = Filtre(18, 15)
+    gl.filtre = Filtre(18, 20)
 
     # Placement et échelle dans la scène
     gl.scale = 1

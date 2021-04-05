@@ -158,7 +158,7 @@ def main():
             if gl.frame_number < 20:
                 every = 1
             else:
-                every = 18
+                every = 5
             # les datas sans le body
             data = gl.data[gl.nums][:-1]
             if gl.frame_number % every == 0:

@@ -7,7 +7,7 @@ try:
     from scipy.signal import savgol_filter
     SCIPY = True
 except:
-    print("Vous devez installer scipy")
+    print("Vous devez installer scipy !")
     SCIPY = False
 
 class Filtre:
@@ -30,7 +30,7 @@ class Filtre:
 
         # Filtre
         self.window_length = self.get_window_length()
-        self.order = 4
+        self.order = 2
 
     def add(self, points):
         """points = liste de 18 items, soit [1,2,3] soit None"""
@@ -62,12 +62,25 @@ class Filtre:
                                 new_points[i].append(round(sav[-1], 3))
                             else:
                                 new_points[i].append(round(self.piles[i][j][-1], 3))
+
+                            # #if i == 4 and j == 0:
+                                # #print("\n\n")
+                                # #print("sav ", sav)
+                                # #print("lst ", lst)
+                                # #print("last sav ", round(sav[-1], 3))
+
                     if not valid:
                         new_points[i] = None
                 else:
                     new_points[i] = None
             else:
                 new_points = None
+
+        # #try:
+            # #print("pile last =", round(self.piles[4][0][-1], 3))
+            # #print("new       =", round(new_points[4][0], 3))
+        # #except:
+            # #pass
 
         return new_points
 
@@ -97,7 +110,7 @@ def get_points(data):
         soit 3*18 items avec:
             mutipliées par 1000
             les None sont remplacés par (-1000000, -1000000, -1000000)
-            le numéro du body doit être enlevé avant
+            le numéro du body (dernier de la liste) doit être enlevé
     """
     nb = 18
     if len(data) % 3 == 0 and len(data)/3 == nb:
